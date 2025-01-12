@@ -16,6 +16,7 @@
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
+  --spacing-xxl: 6rem;
   --container-width: 1400px;
   --border-radius: 15px;
   --border-radius-lg: 25px;
@@ -271,6 +272,7 @@ header {
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
   line-height: 1;
+  padding: 0 var(--spacing-xxl);
 }
 
 .feature-card {
@@ -710,6 +712,7 @@ header {
   .features-grid {
     grid-template-columns: 1fr;
     margin-top: var(--spacing-lg);
+    padding: unset;
   }
   .features h2 {
     font-size: 1.6rem;
