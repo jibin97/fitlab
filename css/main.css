@@ -266,46 +266,66 @@ header {
   font-weight: bold;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
-  line-height: 1;
-  padding: 0 var(--spacing-xxl);
+.swiper-container {
+  max-width: 1200px;
+  padding: 20px 40px;
+  margin: 0 auto;
 }
 
-.feature-card {
-  background-color: var(--primary-color);
+.card {
+  background: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 350px;
   padding: var(--spacing-sm);
-  border-radius: 20px;
-  text-align: center;
-  transition: transform var(--animation-duration) ease,
-    box-shadow var(--animation-duration) ease;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
+}
+
+.card-image {
+  height: 200px;
+  background: #f0f0f0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--spacing-sm);
+  text-align: left;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
   color: var(--text-light);
 }
 
-.feature-card:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.card p {
+  margin: 0;
+  color: var(--text-light);
 }
 
-.feature-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background-color: var(--accent-color);
-  margin-bottom: var(--spacing-md);
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
-  transition: transform var(--animation-duration) ease;
+.swiper-button-next,
+.swiper-button-prev {
+  background: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.feature-image img {
-  width: 100%;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--primary-color); 
+  transform: scale(1.1);
 }
-.feature-card:hover .feature-image {
-  transform: scale(1.03);
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px;
+  color: var(--text-primary);
 }
 
 .services-head {
@@ -716,6 +736,10 @@ header {
   }
   .features h2 {
     font-size: 1.6rem;
+  }
+
+  .swiper-container {
+    padding: unset;
   }
 
   .service-item {
