@@ -67,10 +67,6 @@ scrollbar thumb:hover {
   background-color: #1a1a1a;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--light-bg);
 }
@@ -234,11 +230,16 @@ header {
 
 .features {
   background-color: var(--secondary-color);
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xl) 0 var(--spacing-md)  0;
   text-align: center;
   position: relative;
 }
-
+.sub-title {
+  font-size: var(--font-size-regular);
+}
+.title {
+  line-height: 1;
+}
 .feature-line {
   position: absolute;
   left: 0;
@@ -249,7 +250,7 @@ header {
   fill: none;
   stroke: #ae9274;
   stroke-miterlimit: 10;
-  stroke-width: 3px;
+  stroke-width: 1px;
   stroke-dasharray: 800; /* Total length of the path */
   stroke-dashoffset: 800; /* Start fully offset (invisible) */
   transition: stroke-dashoffset 2s ease-out;
@@ -274,16 +275,16 @@ header {
 
 .card {
   background: var(--primary-color);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-height: 350px;
+  border-radius: 28px;
+  box-shadow: 0px 14px 14px rgb(0 0 0 / 72%);
+  min-height: 360px;
   padding: var(--spacing-sm);
 }
 
 .card-image {
-  height: 200px;
+  height: 250px;
   background: #f0f0f0;
-  border-radius: 8px 8px 0 0;
+  border-radius: 20px 20px 0 0;
   overflow: hidden;
 }
 
@@ -319,7 +320,7 @@ header {
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: var(--primary-color); 
+  background: var(--primary-color);
   transform: scale(1.1);
 }
 .swiper-button-next:after,
@@ -327,7 +328,9 @@ header {
   font-size: 18px;
   color: var(--text-primary);
 }
-
+.swiper {
+  padding-bottom: 40px;
+}
 .services-head {
   padding: var(--spacing-md) 0;
   background-color: var(--light-bg);
@@ -398,7 +401,7 @@ header {
 
 .ems-image {
   width: 400px;
-  height: 200px;
+  height: 170px;
   overflow: hidden;
 }
 .ems-image img {
@@ -422,7 +425,7 @@ header {
   line-height: 1.6;
 }
 .ems-container {
-  gap: 25rem !important;
+  gap: 18rem !important;
   align-items: start;
 }
 .personal {
@@ -444,13 +447,14 @@ header {
 }
 .avatar {
   position: absolute;
-  width: 250px;
-  height: 442px;
-  background-color: #7c664c;
-  left: -62%;
-  top: -90px;
+  width: 353px;
+  left: -68%;
+  top: -132px;
 }
-
+.avatar img {
+  width: 100%;
+  object-fit: cover;
+}
 .group-class {
   background-color: var(--gray-bg);
   padding: var(--spacing-xl) 0;
@@ -471,7 +475,7 @@ header {
   fill: none;
   stroke: #ae9274;
   stroke-miterlimit: 10;
-  stroke-width: 3px;
+  stroke-width: 1px;
   stroke-dasharray: 800; /* Total length of the path */
   stroke-dashoffset: 800; /* Start fully offset (invisible) */
   transition: stroke-dashoffset 2s ease-out;
@@ -496,7 +500,6 @@ header {
 }
 
 .app-bg {
-  transform: scaleX(-1);
   position: absolute;
   top: 0;
   left: 0;
@@ -740,6 +743,7 @@ header {
 
   .swiper-container {
     padding: unset;
+    padding-top: var(--spacing-md);
   }
 
   .service-item {
@@ -793,9 +797,10 @@ header {
     font-size: unset;
   }
   .avatar {
-    left: -85%;
-    top: -1%;
+    left: -310px;
+    bottom: -5%;
     z-index: -1;
+    top: unset;
   }
 
   .services-s-title {
@@ -814,7 +819,7 @@ header {
   }
 
   .personal {
-    margin-left: 70px;
+    margin-left: 100px;
   }
 
   .social-icons {
@@ -825,7 +830,7 @@ header {
   }
   .svg-line,
   .group-svg-line {
-    stroke-width: 10px;
+    stroke-width: 1px;
   }
 }
 

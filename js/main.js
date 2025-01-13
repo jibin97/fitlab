@@ -81,10 +81,10 @@ navLinkList.forEach((link) => {
 });
 
 const swiper = new Swiper(".swiper", {
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: true,
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
   slidesPerView: 3,
   spaceBetween: 20,
   loop: true,
@@ -111,6 +111,6 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-// swiper.el.addEventListener("mouseleave", function () {
-//   swiper.autoplay.start();
-// });
+swiper.el.addEventListener("mouseleave", function () {
+  swiper.autoplay.start();
+});
