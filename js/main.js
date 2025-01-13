@@ -80,6 +80,18 @@ navLinkList.forEach((link) => {
   });
 });
 
+//HERO BANNERS
+const images = document.querySelectorAll(".hero-bg");
+let currentImageIndex = 0;
+
+function nextImage() {
+  images[currentImageIndex].classList.remove("active");
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  images[currentImageIndex].classList.add("active");
+}
+// Change image every 5 seconds
+setInterval(nextImage, 5000);
+
 const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 3000,
@@ -98,15 +110,15 @@ const swiper = new Swiper(".swiper", {
   breakpoints: {
     320: {
       slidesPerView: 1,
-      spaceBetween: 10,
+      spaceBetween: 30,
     },
     768: {
       slidesPerView: 2,
-      spaceBetween: 15,
+      spaceBetween: 30,
     },
     1024: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 40,
     },
   },
 });
