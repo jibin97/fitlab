@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* Container styles */
+        main {
+            position: relative;
+            overflow: hidden;
+            min-height: 400px; /* Set a minimum height */
+        }
+
+        /* Content section styles */
+        .main-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: none;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Background colors for different sections */
+        #home {
+            background-color: #ffebee;
+        }
+
+        #about {
+            background-color: #e8f5e9;
+        }
+
+        #services {
+            background-color: #e3f2fd;
+        }
+
+        #contact {
+            background-color: #fff3e0;
+        }
+
+        /* Show active content */
+        .main-content.active {
+            display: block;
+        }
+
+        /* Slide animations */
+        .slide-in-left {
+            animation: slideInLeft 0.5s forwards;
+            display: block;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.5s forwards;
+            display: block;
+        }
+
+        .slide-out-left {
+            animation: slideOutLeft 0.5s forwards;
+            display: block;
+        }
+
+        .slide-out-right {
+            animation: slideOutRight 0.5s forwards;
+            display: block;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOutLeft {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Nav styles */
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            margin: 0 5px;
+        }
+
+        .nav-link.active {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Additional styles for better visibility */
+        .main-content {
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <nav class="nav-links">
+                <a class="nav-link active" href="#home" data-content="home" data-index="0">Home</a>
+                <a class="nav-link" href="#about" data-content="about" data-index="1">About Us</a>
+                <a class="nav-link" href="#services" data-content="services" data-index="2">Services</a>
+                <a class="nav-link" href="#contact" data-content="contact" data-index="3">Contact Us</a>
+                <a class="nav-link phone" href="tel:+971506231234">+971 50623 1234</a>
+                <a class="nav-link join" href="">Join Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Content -->
+        <div id="home" class="main-content active">
+            <h1>Welcome to The Fitlab</h1>
+            <p>This is the home section with a light red background.</p>
+            <!-- Add your home content here -->
+        </div>
+
+        <!-- About Content -->
+        <div id="about" class="main-content">
+            <h1>About Us</h1>
+            <p>This is the about section with a light green background.</p>
+            <!-- Add your about content here -->
+        </div>
+
+        <!-- Services Content -->
+        <div id="services" class="main-content">
+            <h1>Our Services</h1>
+            <p>This is the services section with a light blue background.</p>
+            <!-- Add your services content here -->
+        </div>
+
+        <!-- Contact Content -->
+        <div id="contact" class="main-content">
+            <h1>Contact Us</h1>
+            <p>This is the contact section with a light orange background.</p>
+            <!-- Add your contact content here -->
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link[data-content]');
+            let currentIndex = 0;
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const newIndex = parseInt(link.getAttribute('data-index'));
+                    const contentId = link.getAttribute('data-content');
+                    
+                    // Don't do anything if clicking the same link
+                    if (newIndex === currentIndex) return;
+                    
+                    const goingRight = newIndex > currentIndex;
+                    const currentContent = document.querySelector('.main-content.active');
+                    const newContent = document.getElementById(contentId);
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    // Remove any existing animation classes
+                    const allContents = document.querySelectorAll('.main-content');
+                    allContents.forEach(content => {
+                        content.classList.remove('slide-in-left', 'slide-in-right', 'slide-out-left', 'slide-out-right');
+                    });
+                    
+                    // Add appropriate animation classes
+                    if (goingRight) {
+                        currentContent.classList.add('slide-out-left');
+                        newContent.classList.add('slide-in-right');
+                    } else {
+                        currentContent.classList.add('slide-out-right');
+                        newContent.classList.add('slide-in-left');
+                    }
+                    
+                    // Update active states
+                    currentContent.classList.remove('active');
+                    newContent.classList.add('active');
+                    
+                    // Update current index
+                    currentIndex = newIndex;
+                    
+                    // Clean up animation classes after animation ends
+                    setTimeout(() => {
+                        allContents.forEach(content => {
+                            if (!content.classList.contains('active')) {
+                                content.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+                            }
+                        });
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
