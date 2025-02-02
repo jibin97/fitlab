@@ -54,9 +54,23 @@
           <span></span>
         </div>
         <nav class="nav-links">
-          <a class="nav-link" href="#hero">Home</a>
-          <a class="nav-link" href="#">About Us</a>
-          <a class="nav-link" href="#">Services</a>
+          <a
+            class="nav-link active"
+            data-content="slide-home"
+            data-index="0"
+            href="#hero"
+            >Home</a
+          >
+          <a class="nav-link" data-content="slide-about" data-index="1" href="#"
+            >About Us</a
+          >
+          <a
+            class="nav-link"
+            data-content="slide-service"
+            data-index="2"
+            href="#"
+            >Services</a
+          >
           <a class="nav-link" href="#footer">Contact Us</a>
           <a class="nav-link phone" href="tel:+971506231234">+971 50623 1234</a>
           <a class="nav-link join" href="">Join Us</a>
@@ -65,284 +79,454 @@
     </header>
 
     <main>
-      <section id="hero" style="padding-top: 102px"></section>
-      <section class="hero">
-        <img
-          src="images/Banner 1.jpg"
-          alt="Hero Background"
-          class="hero-bg active"
-        />
-        <div class="container">
-          <div class="hero-content">
-            <h1>YOUR DESTINATION FOR</h1>
-            <h1>HOLISTIC WELLNESS</h1>
-            <h1>IN ABU DHABI</h1>
-            <p>
-              At The Fit Lab, we help you embrace health as a lifestyle. Our
-              personalized programs, created for all ages and fitness levels,
-              support your journey toward balanced wellness with the latest in
-              fitness science and expert guidance.
-            </p>
-            <a href="#" class="cta-button">JOIN NOW</a>
+      <div id="slide-home" class="main-content active">
+        <section id="hero"></section>
+        <section class="hero">
+          <img
+            src="images/Banner 1.jpg"
+            alt="Hero Background"
+            class="hero-bg active"
+          />
+          <div class="container">
+            <div class="hero-content">
+              <h1>YOUR DESTINATION FOR</h1>
+              <h1>HOLISTIC WELLNESS</h1>
+              <h1>IN ABU DHABI</h1>
+              <p>
+                At The Fit Lab, we help you embrace health as a lifestyle. Our
+                personalized programs, created for all ages and fitness levels,
+                support your journey toward balanced wellness with the latest in
+                fitness science and expert guidance.
+              </p>
+              <a href="#" class="cta-button">JOIN NOW</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="features">
-        <div class="container">
+        <section class="features">
+          <div class="container">
+            <svg
+              class="feature-line"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 605 80.86"
+            >
+              <g id="Guides_For_Artboard" data-name="Guides For Artboard">
+                <path
+                  class="svg-line"
+                  d="M0,1.5h200.12c16.34,0,32.2,5.6,44.91,15.86l57.17,46.14c12.72,10.26,28.57,15.86,44.91,15.86H605"
+                ></path>
+              </g>
+            </svg>
+
+            <h2 class="title">WHY CHOOSE THE FIT LAB?</h2>
+            <p class="sub-title">
+              Join The Fit Lab and discover a healthier, happier you!
+            </p>
+            <div class="swiper-container">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <!-- Cards -->
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Science-Driven Programs</h3>
+                        <p>Safe, effective, and results-focused.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Inclusive Community</h3>
+                        <p>Programs for everyone—from kids to seniors.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Complete Wellness Solutions</h3>
+                        <p>
+                          From HIIT training to yoga, weight loss, and
+                          nutrition.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Science-Driven Programs</h3>
+                        <p>Safe, effective, and results-focused.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Inclusive Community</h3>
+                        <p>Programs for everyone—from kids to seniors.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="images/image.png" alt="Feature" />
+                      </div>
+                      <div class="card-content">
+                        <h3>Complete Wellness Solutions</h3>
+                        <p>
+                          From HIIT training to yoga, weight loss, and
+                          nutrition.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-head">
+          <div class="container">
+            <h2 class="services-title">OUR KEY SERVICES</h2>
+            <p class="services-s-title">
+              Your body is designed to move with purpose.<br />
+              We can help you go further with the right balance of training and
+              motivation.
+            </p>
+          </div>
+        </section>
+
+        <section class="services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content kids">
+                <h3>
+                  KIDS' EMPOWERMENT <br />
+                  AND FITNESS
+                </h3>
+                <p>
+                  Self-defense and fitness for confidence and resilience. This
+                  program helps kids manage weight and boost fitness through a
+                  mix of self-defense, exercise, and life skills, empowering
+                  them to be confident and resilient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-list service-ems">
+          <div class="container">
+            <div class="service-item ems-container">
+              <div class="ems">
+                <div class="ems-image">
+                  <img src="images/ems.png" alt="" />
+                </div>
+                <div class="ems-service-content">
+                  <h3>EMS TRAINING</h3>
+                  <p>
+                    EMS (Electrical Muscle Stimulation) fitness technology uses
+                    low-frequency electrical impulses to stimulate muscles,
+                    enhancing workout efficiency. Originally used in physical
+                    therapy, EMS is now popular in fitness due to its ability to
+                    target muscle groups more intensively in a shorter time,
+                    helping improve strength, tone, and endurance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="personal">
+                <div class="avatar">
+                  <img src="assets/personalfig.webp" alt="" />
+                </div>
+                <svg
+                  class="arrow-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 94.29 33.19"
+                >
+                  <g>
+                    <polygon
+                      class="arrow-2"
+                      points="80.76 33.19 71.64 33.19 85.18 16.59 71.64 0 80.76 0 94.29 16.59 80.76 33.19"
+                    />
+                    <polygon
+                      class="arrow-2"
+                      points="62.85 33.19 53.73 33.19 67.26 16.59 53.73 0 62.85 0 76.38 16.59 62.85 33.19"
+                    />
+                    <polygon
+                      class="arrow-2"
+                      points="44.94 33.19 35.82 33.19 49.35 16.59 35.82 0 44.94 0 58.47 16.59 44.94 33.19"
+                    />
+                    <polygon
+                      class="arrow-2"
+                      points="27.03 33.19 17.91 33.19 31.44 16.59 17.91 0 27.03 0 40.56 16.59 27.03 33.19"
+                    />
+                    <polygon
+                      class="arrow-2"
+                      points="9.12 33.19 0 33.19 13.53 16.59 0 0 9.12 0 22.65 16.59 9.12 33.19"
+                    />
+                  </g>
+                </svg>
+                <h3>PERSONAL TRAINING</h3>
+                <div class="personal-banner">
+                  <p>Tailored programs for every age group.</p>
+                </div>
+                <p>
+                  At The FitLab, we provide personal training that is designed
+                  to help you reach your fitness goals through customized,
+                  innovative solutions. Whether you are just starting or looking
+                  to take your fitness to the next level, our expert trainers
+                  create personalized programs tailored to your unique needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services-list group-class">
           <svg
-            class="feature-line"
+            class="group-line"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 605 80.86"
           >
             <g id="Guides_For_Artboard" data-name="Guides For Artboard">
               <path
-                class="svg-line"
+                class="group-svg-line"
                 d="M0,1.5h200.12c16.34,0,32.2,5.6,44.91,15.86l57.17,46.14c12.72,10.26,28.57,15.86,44.91,15.86H605"
               ></path>
             </g>
           </svg>
-
-          <h2 class="title">WHY CHOOSE THE FIT LAB?</h2>
-          <p class="sub-title">
-            Join The Fit Lab and discover a healthier, happier you!
-          </p>
-          <div class="swiper-container">
-            <div class="swiper">
-              <div class="swiper-wrapper">
-                <!-- Cards -->
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Science-Driven Programs</h3>
-                      <p>Safe, effective, and results-focused.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Inclusive Community</h3>
-                      <p>Programs for everyone—from kids to seniors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Complete Wellness Solutions</h3>
-                      <p>
-                        From HIIT training to yoga, weight loss, and nutrition.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Science-Driven Programs</h3>
-                      <p>Safe, effective, and results-focused.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Inclusive Community</h3>
-                      <p>Programs for everyone—from kids to seniors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="images/image.png" alt="Feature" />
-                    </div>
-                    <div class="card-content">
-                      <h3>Complete Wellness Solutions</h3>
-                      <p>
-                        From HIIT training to yoga, weight loss, and nutrition.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Navigation buttons -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="services-head">
-        <div class="container">
-          <h2 class="services-title">OUR KEY SERVICES</h2>
-          <p class="services-s-title">
-            Your body is designed to move with purpose.<br />
-            We can help you go further with the right balance of training and
-            motivation.
-          </p>
-        </div>
-      </section>
-
-      <section class="services-list">
-        <div class="container">
-          <div class="service-item">
-            <div class="service-image">
-              <img src="images/image copy.png" alt="" />
-            </div>
-            <div class="service-content kids">
-              <h3>
-                KIDS' EMPOWERMENT <br />
-                AND FITNESS
-              </h3>
-              <p>
-                Self-defense and fitness for confidence and resilience. This
-                program helps kids manage weight and boost fitness through a mix
-                of self-defense, exercise, and life skills, empowering them to
-                be confident and resilient.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="services-list service-ems">
-        <div class="container">
-          <div class="service-item ems-container">
-            <div class="ems">
-              <div class="ems-image">
-                <img src="images/ems.png" alt="" />
-              </div>
-              <div class="ems-service-content">
-                <h3>EMS TRAINING</h3>
+          <img src="images/Banner 3.jpg" alt="Hero Background" class="app-bg" />
+          <div class="container">
+            <div class="service-item group-class-item">
+              <div class="service-content">
+                <h3>GROUP CLASSES</h3>
                 <p>
-                  EMS (Electrical Muscle Stimulation) fitness technology uses
-                  low-frequency electrical impulses to stimulate muscles,
-                  enhancing workout efficiency. Originally used in physical
-                  therapy, EMS is now popular in fitness due to its ability to
-                  target muscle groups more intensively in a shorter time,
-                  helping improve strength, tone, and endurance.
+                  Our Group Exercise Programs offer a dynamic range of workouts
+                  that are designed to improve strength, fitness, and mental
+                  well-being, all in a supportive group setting.
                 </p>
               </div>
             </div>
-
-            <div class="personal">
-              <div class="avatar">
-                <img src="assets/personalfig.webp" alt="" />
-              </div>
-              <svg
-                class="arrow-svg"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 94.29 33.19"
-              >
-                <g>
-                  <polygon
-                    class="arrow-2"
-                    points="80.76 33.19 71.64 33.19 85.18 16.59 71.64 0 80.76 0 94.29 16.59 80.76 33.19"
-                  />
-                  <polygon
-                    class="arrow-2"
-                    points="62.85 33.19 53.73 33.19 67.26 16.59 53.73 0 62.85 0 76.38 16.59 62.85 33.19"
-                  />
-                  <polygon
-                    class="arrow-2"
-                    points="44.94 33.19 35.82 33.19 49.35 16.59 35.82 0 44.94 0 58.47 16.59 44.94 33.19"
-                  />
-                  <polygon
-                    class="arrow-2"
-                    points="27.03 33.19 17.91 33.19 31.44 16.59 17.91 0 27.03 0 40.56 16.59 27.03 33.19"
-                  />
-                  <polygon
-                    class="arrow-2"
-                    points="9.12 33.19 0 33.19 13.53 16.59 0 0 9.12 0 22.65 16.59 9.12 33.19"
-                  />
-                </g>
-              </svg>
-              <h3>PERSONAL TRAINING</h3>
-              <div class="personal-banner">
-                <p>Tailored programs for every age group.</p>
-              </div>
-              <p>
-                At The FitLab, we provide personal training that is designed to
-                help you reach your fitness goals through customized, innovative
-                solutions. Whether you are just starting or looking to take your
-                fitness to the next level, our expert trainers create
-                personalized programs tailored to your unique needs.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="services-list group-class">
-        <svg
-          class="group-line"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 605 80.86"
-        >
-          <g id="Guides_For_Artboard" data-name="Guides For Artboard">
-            <path
-              class="group-svg-line"
-              d="M0,1.5h200.12c16.34,0,32.2,5.6,44.91,15.86l57.17,46.14c12.72,10.26,28.57,15.86,44.91,15.86H605"
-            ></path>
-          </g>
-        </svg>
-        <img src="images/Banner 3.jpg" alt="Hero Background" class="app-bg" />
-        <div class="container">
-          <div class="service-item group-class-item">
-            <div class="service-content">
-              <h3>GROUP CLASSES</h3>
-              <p>
-                Our Group Exercise Programs offer a dynamic range of workouts
-                that are designed to improve strength, fitness, and mental
-                well-being, all in a supportive group setting.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-section">
-        <img src="images/Banner 2.jpg" alt="Hero Background" class="app-bg" />
-        <div class="container">
-          <div class="app-content">
-            <div class="app-content-text">
-              <img src="assets/Watch.svg" alt="watch">
-              <h2>THE FIT LAB APP:</h2>
-              <p>
-                Track workouts, monitor progress through real-time updates on
-                our app.
-              </p>
-              <a href="#" class="cta-button">DOWNLOAD NOW</a>
-            </div>
-           <div class="app-image">
-             <img src="assets/Mobile.webp" alt="">
-           </div>
-          </div>
-        </div>
-        <div class="app-banner">
+        <section class="app-section">
+          <img src="images/Banner 2.jpg" alt="Hero Background" class="app-bg" />
           <div class="container">
-            <h1 class="app-banner-title">GET STARTED TODAY!</h1>
+            <div class="app-content">
+              <div class="app-content-text">
+                <img src="assets/Watch.svg" alt="watch" />
+                <h2>THE FIT LAB APP:</h2>
+                <p>
+                  Track workouts, monitor progress through real-time updates on
+                  our app.
+                </p>
+                <a href="#" class="cta-button">DOWNLOAD NOW</a>
+              </div>
+              <div class="app-image">
+                <img src="assets/Mobile.webp" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="app-banner">
+            <div class="container">
+              <h1 class="app-banner-title">GET STARTED TODAY!</h1>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="slide-about" class="main-content">
+        <div class="_about_header">
+          <div class="_about_header_content">
+            <h1 class="_about_title">About Us</h1>
+            <div class="_about_intro">
+              <p>
+                Welcome to The FITLAB, where innovation meets wellness in the
+                heart of Abu Dhabi. We're more than just a fitness center -
+                we're your partner in transformation.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+        <div class="_about_container">
+          <div class="_about_vision_mission">
+            <div class="_about_card">
+              <h2>Vision</h2>
+              <p>
+                Our vision is to establish The FITLAB as the UAE's top fitness
+                and wellness center renowned for our focus on the complete
+                well-being of every individual. We aim to cultivate a vibrant,
+                health-focused community where wellness is woven into daily
+                life.
+              </p>
+            </div>
+
+            <div class="_about_card">
+              <h2>Mission</h2>
+              <p>
+                To motivate and support each person on their path to a
+                healthier, happier lifestyle. Through results-driven programs
+                that include physical training, mental health resources, and
+                self-defense education, The FITLAB offers inclusive spaces for
+                everyone, from children to seniors, fostering long-lasting
+                positive change.
+              </p>
+            </div>
+          </div>
+
+          <div class="_about_image_grid">
+            <div class="_about_image_container">
+              <img src="./assets/Mobile.webp" alt="Our Facility" />
+              <div class="_about_image_overlay">State-of-the-art Facility</div>
+            </div>
+            <div class="_about_image_container">
+              <img src="./assets/Mobile.webp" alt="Training Session" />
+              <div class="_about_image_overlay">Expert Training</div>
+            </div>
+            <div class="_about_image_container">
+              <img src="./assets/Mobile.webp" alt="Community" />
+              <div class="_about_image_overlay">Vibrant Community</div>
+            </div>
+          </div>
+
+          <div class="_about_final_section">
+            <div class="_about_intro" style="color: #1a1a1a">
+              <p>
+                With a strong foundation built on trust, expertise, and
+                innovation, we aspire to be the leading fitness destination in
+                the UAE. Join us in cultivating a vibrant community where
+                wellness is not just a goal but a way of life. The FITLAB -
+                empowering lives, one step at a time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="slide-service" class="main-content">
+        <section class="page_services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content kids">
+                <h3>
+                  KIDS' EMPOWERMENT <br />
+                  AND FITNESS
+                </h3>
+                <p>
+                  Self-defense and fitness for confidence and resilience. This
+                  program helps kids manage weight and boost fitness through a
+                  mix of self-defense, exercise, and life skills, empowering
+                  them to be confident and resilient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page_services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content crossfit-training">
+                <h3>CROSSFIT & HIGH-INTENSITY TRAINING</h3>
+                <p>
+                  Push your limits with our CrossFit and high-intensity training
+                  classes. These fast-paced workouts are designed to improve
+                  endurance, strength, and speed through varied exercises and
+                  challenges, perfect for anyone looking to take their fitness
+                  to the next level.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page_services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content yoga-flexibility">
+                <h3>YOGA & FLEXIBILITY</h3>
+                <p>
+                  Improve your balance, flexibility, and mindfulness through our
+                  yoga classes. Our instructors guide you through various poses
+                  and breathing exercises that help reduce stress and improve
+                  overall physical and mental flexibility.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page_services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content strength-training">
+                <h3>STRENGTH TRAINING</h3>
+                <p>
+                  Build lean muscle, increase strength, and boost your
+                  metabolism with our targeted strength training sessions.
+                  Whether you're looking to get stronger for daily tasks or
+                  achieve athletic goals, our expert trainers will guide you
+                  every step of the way.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page_services-list">
+          <div class="container">
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/image copy.png" alt="" />
+              </div>
+              <div class="service-content mind-body">
+                <h3>MIND-BODY CONNECTION</h3>
+                <p>
+                  Focus on the harmony between body and mind with our mind-body
+                  fitness programs, including Pilates, Tai Chi, and meditation.
+                  These practices promote mindfulness, flexibility, and stress
+                  reduction while enhancing physical strength and mental
+                  clarity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer id="footer" class="footer">

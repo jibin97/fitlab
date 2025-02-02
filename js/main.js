@@ -46,39 +46,104 @@ document.querySelectorAll(".svg-line").forEach((item) => {
   observer.observe(item);
 });
 
-document.querySelectorAll(".nav-link").forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      // Close mobile menu if open
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-      if (hamburger.classList.contains("active")) {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-      }
-
-      // Smooth scroll to target
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+const scrollToTop = () => {
+  // First method: Using smooth scroll behavior
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
-});
+
+  // Fallback method for browsers that don't support smooth scroll
+  if (!("scrollBehavior" in document.documentElement.style)) {
+    window.scrollTo(0, 0);
+  }
+};
 
 // Select all nav links
-const navLinkList = document.querySelectorAll(".nav-link");
-
+const navLinkList = document.querySelectorAll(".nav-link[data-content]");
+let currentIndex = 0;
 navLinkList.forEach((link) => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
+    // this.classList.add("active");
+
+    const newIndex = parseInt(link.getAttribute("data-index"));
+    const contentId = link.getAttribute("data-content");
+
+    // Don't do anything if clicking the same link
+    if (newIndex === currentIndex) return;
+
+    const goingRight = newIndex > currentIndex;
+    const currentContent = document.querySelector(".main-content.active");
+    const newContent = document.getElementById(contentId);
+
+    // Remove active class from all links
     navLinkList.forEach((link) => link.classList.remove("active"));
-    this.classList.add("active");
+    link.classList.add("active");
+
+    // Remove any existing animation classes
+    const allContents = document.querySelectorAll(".main-content");
+    allContents.forEach((content) => {
+      content.classList.remove(
+        "slide-in-left",
+        "slide-in-right",
+        "slide-out-left",
+        "slide-out-right"
+      );
+    });
+
+    // Add appropriate animation classes
+    if (goingRight) {
+      currentContent.classList.add("slide-out-left");
+      newContent.classList.add("slide-in-right");
+    } else {
+      currentContent.classList.add("slide-out-right");
+      newContent.classList.add("slide-in-left");
+    }
+
+    // Update active states
+    currentContent.classList.remove("active");
+    newContent.classList.add("active");
+
+    // Update current index
+    currentIndex = newIndex;
+    // scrollToTop();
+    // Clean up animation classes after animation ends
+    setTimeout(() => {
+      allContents.forEach((content) => {
+        if (!content.classList.contains("active")) {
+          content.classList.remove(
+            "slide-out-left",
+            "slide-out-right",
+            "slide-in-left",
+            "slide-in-right"
+          );
+        }
+      });
+    }, 500);
   });
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.style.animationPlayState = "running";
+//         }
+//       });
+//     },
+//     {
+//       threshold: 0.1,
+//     }
+//   );
+
+//   document
+//     .querySelectorAll("._about_card, ._about_image_container")
+//     .forEach((el) => {
+//       observer.observe(el);
+//     });
+// });
 
 //HERO BANNERS
 const images = document.querySelectorAll(".hero-bg");
